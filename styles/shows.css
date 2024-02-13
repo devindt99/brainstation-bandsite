@@ -1,0 +1,7 @@
+.show__dummy:hover {
+  background-color: black;
+}
+
+.show__dummy:clicked {
+  background-color: orange;
+}/*# sourceMappingURL=shows.css.map */

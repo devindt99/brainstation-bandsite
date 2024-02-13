@@ -1,0 +1,47 @@
+//Define colors
+$bandsite-black: #323232;
+$silver: #afafaf;
+$white: #ffffff;
+$bandsite-darkblack: #000000;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+// Define breakpoints
+$desktop: 1280px;
+$tablet: 768px;
+$mobile: 320px;
+
+// Define grid properties
+$gutter-desktop: 24px;
+$gutter-tablet: 24px;
+$gutter-mobile: 16px;
+
+$margin-desktop: 63px;
+$margin-tablet: 36px;
+$margin-mobile: 16px;
+
+// Define font weights
+$font-weight-bold: 700;
+$font-weight-demi: 600;
+$font-weight-regular: 400;
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("../assets/font/avenirNextLTPro-Regular.otf");
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("../assets/font/avenirNextLTPro-Demi.otf");
+    font-weight: $font-weight-demi;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("../assets/font/avenirNextLTPro-Bold.otf");
+    font-weight: $font-weight-bold;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,29 +1,6 @@
-//Deefine colors
-$bandsite-black: #323232;
-$silver: #afafaf;
-$white: #ffffff;
-$bandsite-darkblack: #000000;
-$mercury: #e1e1e1;
-$alabaster: #fafafa;
-// Define breakpoints
-$desktop: 1280px;
-$tablet: 768px;
-$mobile: 320px;
 
-// Define grid properties
-$gutter-desktop: 24px;
-$gutter-tablet: 24px;
-$gutter-mobile: 16px;
 
-$margin-desktop: 63px;
-$margin-tablet: 36px;
-$margin-mobile: 16px;
-
-// Define font weights
-$font-weight-bold: 700;
-$font-weight-demi: 600;
-$font-weight-regular: 400;
-
+@use "./partials/variables" as *;
 // Mixin for typography
 @mixin typography($size, $line-height, $weight) {
   font-size: $size;
@@ -31,27 +8,7 @@ $font-weight-regular: 400;
   font-weight: $weight;
 }
 
-@font-face {
-    font-family: 'Avenir Next';
-    src: url("../3.0\ -\ Assets/Font/AvenirNextLTPro-Regular.otf");
-    font-weight: $font-weight-regular;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Avenir Next';
-    src: url("../3.0\ -\ Assets/Font/AvenirNextLTPro-Demi.otf");
-    font-weight: $font-weight-demi;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Avenir Next';
-    src: url("../3.0\ -\ Assets/Font/AvenirNextLTPro-Bold.otf");
-    font-weight: $font-weight-bold;
-    font-style: normal;
-    font-display: swap;
-}
+
 $mercury: #e1e1e1;
 $white: #ffffff;
 //Global Styling
@@ -61,9 +18,7 @@ html, body {
     padding: 0;
     width: 100%;
     font-family: 'Avenir Next';
-    
     overflow-x: hidden; // Prevents horizontal overflow that can cause scrollbars
-    
 }
 .logo {
     padding: $margin-mobile;
@@ -119,7 +74,7 @@ html, body {
     
     
     .hero {
-        background: url("../3.0\ -\ Assets/Images/hero-bio.jpg"), rgba($bandsite-black, 0.5);;
+        background: url("../assets/images/hero-bio.jpg"), rgba($bandsite-black, 0.5);
         position: relative;
         color: white;
         width: 100%;
@@ -150,9 +105,7 @@ html, body {
     object-fit: fill;
   }
   .subheader {
-    p {
-        quotes: "“" "”" "‘" "’";
-    }
+
   }
   .footer-copy {
     @include typography(10px, 20px, $font-weight-regular);
@@ -175,7 +128,7 @@ html, body {
     }
 
     .hero {
-        background: url("../3.0\ -\ Assets/Images/hero-bio.jpg"), rgba($bandsite-black, 0.5);;
+        background: url("../assets/images/hero-bio.jpg"), rgba($bandsite-black, 0.5);;
         position: relative;
         color: white;
         width: 100%;
@@ -272,5 +225,95 @@ html, body {
   button {
     @include typography(12px, 20px, $font-weight-bold);
   }
+
+  .comment__heading {
+    margin: $margin-mobile;
+  }
+  //Sprint 2 styling with mobile-first approach
+  .comment {
+
+    margin: $margin-mobile;
+    width: auto;
+
+    
+    
+    &__line {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+
+      div {
+        
+        width: 100%;
+        input {
+          width: calc(100% - .5rem);
+          border-radius: .2rem;
+        }
+      }
+    }
+    &__thumbnail {
+      margin-right: 1rem;
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+      border-radius: 90%;
+      background-color: $mercury;
+  }
+
+  &__form {
+    display: flex;
+    columns: 1;
+    flex-direction: column;
+    width: 100%;
+
+  }
+
+
+  &__name-date-wrapper {
+    
+    
+    display: flex;
+    justify-content: space-between;
+    textarea {
+      width: 100%;
+      
+      border-radius: .2rem;
+    }
+    
   
+  }
+&__comment-wrapper {
+  margin-left: 4rem;
+  width: calc(100% - 4.5rem);
+
+  textarea {
+    width: 100%;
+    
+    border-radius: .2rem;
+  }
+  
+
+}
+&__submit {
+  background-color: $bandsite-black;
+  padding: 1rem;
+  margin-left: 4rem;
+  width: calc(100% - 4rem);
+  color: $white;
+  font-weight: 700;
+  border-radius: .2rem;
+}
+&__date {
+  color: $mercury;
+}
+}
+
+
+
+
+
+.comment__input--first {
+    margin-top: 0; /* Adjust if necessary to align better with thumbnail */
+}
+
 }

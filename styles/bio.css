@@ -1,21 +1,20 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Avenir Next";
-  src: url("../3.0 - Assets/Font/AvenirNextLTPro-Regular.otf");
+  src: url("../assets/font/avenirNextLTPro-Regular.otf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../3.0 - Assets/Font/AvenirNextLTPro-Demi.otf");
+  src: url("../assets/font/avenirNextLTPro-Demi.otf");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../3.0 - Assets/Font/AvenirNextLTPro-Bold.otf");
+  src: url("../assets/font/avenirNextLTPro-Bold.otf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -78,7 +77,7 @@ html, body {
 }
 
 .page-header .hero {
-  background: url("../3.0 - Assets/Images/hero-bio.jpg"), rgba(50, 50, 50, 0.5);
+  background: url("../assets/images/hero-bio.jpg"), rgba(50, 50, 50, 0.5);
   position: relative;
   color: white;
   width: 100%;
@@ -106,10 +105,6 @@ html, body {
      object-fit: fill;
 }
 
-.subheader p {
-  quotes: "“" "”" "‘" "’";
-}
-
 .footer-copy {
   font-size: 10px;
   line-height: 20px;
@@ -130,7 +125,7 @@ html, body {
     grid-template-columns: 1fr;
   }
   .hero {
-    background: url("../3.0 - Assets/Images/hero-bio.jpg"), rgba(50, 50, 50, 0.5);
+    background: url("../assets/images/hero-bio.jpg"), rgba(50, 50, 50, 0.5);
     position: relative;
     color: white;
     width: 100%;
@@ -228,5 +223,71 @@ html, body {
     font-size: 12px;
     line-height: 20px;
     font-weight: 700;
+  }
+  .comment__heading {
+    margin: 16px;
+  }
+  .comment {
+    margin: 16px;
+    width: auto;
+  }
+  .comment__line {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .comment__line div {
+    width: 100%;
+  }
+  .comment__line div input {
+    width: calc(100% - 0.5rem);
+    border-radius: 0.2rem;
+  }
+  .comment__thumbnail {
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 90%;
+    background-color: #e1e1e1;
+  }
+  .comment__form {
+    display: flex;
+    -moz-columns: 1;
+         columns: 1;
+    flex-direction: column;
+    width: 100%;
+  }
+  .comment__name-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .comment__name-date-wrapper textarea {
+    width: 100%;
+    border-radius: 0.2rem;
+  }
+  .comment__comment-wrapper {
+    margin-left: 4rem;
+    width: calc(100% - 4.5rem);
+  }
+  .comment__comment-wrapper textarea {
+    width: 100%;
+    border-radius: 0.2rem;
+  }
+  .comment__submit {
+    background-color: #323232;
+    padding: 1rem;
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 0.2rem;
+  }
+  .comment__date {
+    color: #e1e1e1;
+  }
+  .comment__input--first {
+    margin-top: 0; /* Adjust if necessary to align better with thumbnail */
   }
 }/*# sourceMappingURL=bio.css.map */
