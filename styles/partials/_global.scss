@@ -1,0 +1,229 @@
+@use "./variables" as *;
+
+@mixin typography($size, $line-height, $weight) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+  }
+  
+  
+  $mercury: #e1e1e1;
+  $white: #ffffff;
+  //Global Styling
+  
+  html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: 'Avenir Next';
+      overflow-x: hidden; // Prevents horizontal overflow that can cause scrollbars
+  }
+  li, ui {
+    list-style-type: none;
+  }
+  .logo {
+      padding: $margin-mobile;
+      max-height: 20px;
+      max-width: 120px;
+      background-color: $bandsite-black;
+      @include typography(24px, 18px, $font-weight-regular);
+      color: $white;
+    }  
+  .navbar {
+    width: 100vw;
+    background-color: $bandsite-black;
+    margin-left: -$margin-desktop;
+    display: flex;
+    margin-bottom: 0px;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid $mercury; /* Inactive link color for the underline */
+    
+    .navbar__heading,
+    .navbar__links {
+      padding: $margin-mobile;
+      display: flex;
+      color: white;
+    }
+  
+    .navbar__links {
+      justify-content: space-around;
+      width: 100%; // Ensure links take up the rest of the space
+    }
+    &__link {
+      color: $mercury;
+      text-decoration: none;
+      font-weight: normal;
+      &:hover,
+      &--active {
+        color: $white;
+        font-weight: bold;
+        border-bottom: 2px solid $white; /* Active and hover link color for the underline */
+      }
+    }
+  
+    
+  }
+  .grid-container {
+      
+      margin-left: $margin-desktop;
+      margin-right: $margin-desktop;
+      display: grid;
+      grid-gap: $margin-desktop;
+    }
+  .page-header {
+      
+      
+      .hero {
+          background: url("../assets/images/hero-bio.jpg"), rgba($bandsite-black, 0.5);
+          position: relative;
+          color: white;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+          background-blend-mode: multiply;
+          
+          object-fit: fill;
+          padding: $margin-mobile;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; 
+  
+          aspect-ratio: 16/9;
+      }
+  
+  
+      
+    }
+  
+    .band-images {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      row-gap: $gutter-desktop;
+    }
+    .band-image, .band-images__image {
+      width: calc(100% - $margin-mobile);
+      object-fit: fill;
+    }
+    .subheader {
+  
+    }
+    .footer-copy {
+      @include typography(10px, 20px, $font-weight-regular);
+      background-color: $bandsite-black;
+      color: $white;
+      margin-left: -$margin-desktop;
+      padding-left: $margin-desktop;
+  
+      &__icons {
+          display: grid;
+          grid-template-columns: 32px 32px 32px;
+      }
+  
+    }
+  // Mobile Styling
+  @media (max-width: $tablet) {
+      .band-images {
+          row-gap: $margin-mobile;
+          grid-template-columns: 1fr;
+      }
+  
+      .hero {
+          background: url("../assets/images/hero-bio.jpg"), rgba($bandsite-black, 0.5);;
+          position: relative;
+          color: white;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+          background-blend-mode: multiply;
+          margin-left: -$margin-mobile;
+          margin-right: -$margin-mobile;
+          object-fit: fill;
+          
+          display: flex;
+          flex-direction: column;
+          justify-content: center; 
+  
+          aspect-ratio: 16/9;
+      }
+    .navbar {
+      
+      
+      margin-left: -$margin-mobile;
+      margin-right: -$margin-mobile;
+      flex-direction: row;
+      flex-direction: column;
+      .navbar__links {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  
+    .grid-container {
+      
+      margin-left: $margin-mobile;
+      margin-right: $margin-mobile;
+      display: grid;
+      grid-gap: $margin-mobile;
+    }
+  
+  
+    
+    .page-header {
+      @include typography(24px, 32px, $font-weight-bold);
+    }
+    .section-header {
+      margin-top: 8px;
+  
+      @include typography(14px, 22px, $font-weight-demi);
+    }
+    .subheader,
+    .body-copy {
+      @include typography(13px, 18px, $font-weight-regular);
+    }
+    .footer-copy {
+      @include typography(10px, 20px, $font-weight-regular);
+      background-color: $bandsite-black;
+      color: $white;
+      margin-left: -$margin-mobile;
+      padding-left: $margin-mobile;
+  
+      &__icons {
+          display: grid;
+          grid-template-columns: 32px 32px 32px;
+      }
+  
+    }
+    label,
+    button {
+      @include typography(10px, 20px, $font-weight-bold);
+    }
+  
+  
+    // Desktop & Tablet Styles
+  
+    @media (min-width: $tablet) {
+      .band-images {
+          
+      }
+  }
+  .page-header {
+      @include typography(60px, 68px, $font-weight-bold);
+    }
+    .section-header {
+      @include typography(36px, 44px, $font-weight-bold);
+    }
+    .subheader {
+      @include typography(24px, 32px, $font-weight-demi);
+    }
+    .body-copy {
+      @include typography(14px, 22px, $font-weight-regular);
+    }
+    .footer-copy {
+      @include typography(14px, 20px, $font-weight-regular);
+    }
+    label,
+    button {
+      @include typography(12px, 20px, $font-weight-bold);
+    }
+  }

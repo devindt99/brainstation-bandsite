@@ -1,6 +1,48 @@
+@use "./partials/variables" as *;
+@use "./partials/global" as *;
+// Mixin for typography
+
 .show__dummy:hover {
-    background-color: black;
+    background-color: $mercury;
 }
 .show__dummy:clicked {
-    background-color: orange;
+    background-color: $bandsite-black;
+}
+.show__dummy {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.show {
+    
+
+    &__button {
+
+        background-color: $bandsite-black;
+        padding: 1rem;
+        list-style: none;
+        width: calc(100% - 4rem);
+        color: $white;
+        font-weight: 700;
+        border-radius: .2rem;
+    }
+
+
+}
+#shows-list {
+    padding: none;
+
+    margin: none;
+}
+.show__label {
+
+            color: $mercury;
+}
+
+.show__date {
+    
 }

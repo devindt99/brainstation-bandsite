@@ -2,23 +2,6 @@ import BandSiteApi from "./band-site-api.js";
 
 const api = new BandSiteApi("9ec48fe6-56e1-433e-814d-b0d45822534b");
 
-const showsArray = [
-    {
-      "date": "date1",
-      "venue": "venue1",
-      "location": "location1",
-    },
-    {
-      "date": "date2",
-      "venue": "venue2",
-      "location": "location2",
-    },
-    {
-      "date": "date3",
-      "venue": "venue3",
-      "location": "location3",
-    },
-  ];
 
 
 
@@ -27,7 +10,7 @@ const showsArray = [
         try {
           // Assuming api.getShows() fetches your shows data from the API
           const showsArray = await api.getShows();
-      
+          console.log(showsArray);
           const listEl = document.querySelector("#shows-list"); // Make sure this selector matches your HTML
           listEl.innerHTML = ''; // Clear existing shows to avoid duplicates
       
@@ -53,7 +36,7 @@ const showsArray = [
             itemEl.appendChild(venueLabelEl);
             const venueEl = document.createElement("p");
             venueEl.classList.add("show__venue");
-            venueEl.innerText = showsArray[i].venue;
+            venueEl.innerText = showsArray[i].place;
             itemEl.appendChild(venueEl);
       
             // Location Label & Value
@@ -65,6 +48,11 @@ const showsArray = [
             locationEl.classList.add("show__location");
             locationEl.innerText = showsArray[i].location;
             itemEl.appendChild(locationEl);
+
+            const buyButtonEl = document.createElement("button");
+            buyButtonEl.classList.add("show__button");
+            buyButtonEl.innerText = "Buy Tickets";
+            itemEl.appendChild(buyButtonEl);
           }
         } catch (error) {
           console.error('Error fetching shows:', error);
