@@ -1,9 +1,21 @@
 
 
-@use "./partials/variables" as *;
-@use "./partials/global" as *;
-// Mixin for typography
+@use "partials/variables" as *;
+@use "partials/global" as *;
 
+  .section-header {
+    @media (min-width: $tablet) {
+      @include typography(36px, 44px, $font-weight-regular);
+    }
+    
+/*     Subheader
+    Text size: 14px | Line height: 22px | Text weight: Regular 400
+    Body Copy
+    Text size: 14px | Line height: 20px | Text weight: Regular 400
+    Footer Copy
+    Text size: 12px | Line height: 20px | Text weight: Bold 700
+ */
+  }
   .comment__heading {
     margin: $margin-mobile;
   }
@@ -94,6 +106,9 @@
 
 
 .comment__input--first {
-    margin-top: 0; /* Adjust if necessary to align better with thumbnail */
+    margin-top: 0;
 }
 
+.hero {
+  background: url("../../assets/images/hero-bio.jpg") no-repeat center center, rgba($bandsite-black, 0.5);
+}
